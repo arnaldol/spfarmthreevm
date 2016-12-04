@@ -162,7 +162,7 @@
         "artifactsBaseUrl": "",
         "description": "URL to acquire other templates"
       },
-      "defaultValue": "https://raw.githubusercontent.com/arnaldol/spfarmthreevm"
+      "defaultValue": "https://github.com/arnaldol/spfarmthreevm"
     },
     "spPublicIPNewOrExisting": {
       "type": "string",
