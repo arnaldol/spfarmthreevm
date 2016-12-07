@@ -57,15 +57,12 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
-        "storageProfile": {
-          "imageReference": {
-            "publisher": "MicrosoftSharePoint",
-            "offer": "MicrosoftSharePointServer",
-            "sku": "2013",
-            "version": "latest"
-          },
+        "storageProfile": {         
           "osDisk": {
             "name": "osdisk",
+            "image": {
+              "uri": "https://imagestorage.blob.core.usgovcloudapi.net/imagecontainer/SCSPVM20161205143025.vhd"
+            },
             "vhd": {
               "uri": "[concat('http://',parameters('storageAccountNamePrefix'),'1.blob.core.usgovcloudapi.net/vhds/',parameters('spVMName'),'-osdisk.vhd')]"
             },
