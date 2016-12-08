@@ -65,7 +65,7 @@
               "uri": "https://imagestorage.blob.core.usgovcloudapi.net/imagecontainer/SCSPVM20161205143025.vhd"
             },
             "vhd": {
-              "uri": "[concat('http://',parameters('storageAccountNamePrefix'),'1.blob.core.usgovcloudapi.net/vhds/',parameters('spVMName'),'-osdisk.vhd')]"
+              "uri": "[concat('https://imagestorage.blob.core.usgovcloudapi.net/imagecontainer/',parameters('spVMName'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
