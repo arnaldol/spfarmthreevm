@@ -57,8 +57,9 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
-        "storageProfile": {         
+        "storageProfile": {
           "osDisk": {
+            "osType": "Windows",
             "name": "osdisk",
             "image": {
               "uri": "https://imagestorage.blob.core.usgovcloudapi.net/imagecontainer/SCSPVM20161205143025.vhd"
