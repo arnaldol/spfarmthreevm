@@ -104,7 +104,7 @@
       "metadata": {
         "description": "The SQL Server Service account name"
       },
-      "defaultValue": "sqlservice"
+      "defaultValue": "spfarm"
     },
     "sqlServerServiceAccountPassword": {
       "type": "securestring",
@@ -117,7 +117,7 @@
       "metadata": {
         "description": "The Sharepoint Setup account name"
       },
-      "defaultValue": "sp_setup"
+      "defaultValue": "spfarm"
     },
     "sharePointSetupUserAccountPassword": {
       "type": "securestring",
@@ -215,9 +215,9 @@
     "configDatabaseName": "SP_Config",
     "administrationContentDatabaseName": "SP_AdminContent",
     "contentDatabaseName": "spARM_Content",
-    "adVMName": "VMW-SOUTHCOMDEVMIL-1",
-    "sqlVMName": "VMW-SQL2014-1",
-    "spVMName": "VMW-SP2013-WFE-1",
+    "adVMName": "VMW-SCDEVAD-1",
+    "sqlVMName": "VMW-SQL14-1",
+    "spVMName": "VMW-SP13-WFE-1",
     "LBFE": "LBFE",
     "LBBE": "LBBE",
     "RDPNAT": "RDP",
