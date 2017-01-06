@@ -7,7 +7,7 @@
       "metadata": {
         "description": "The name of the Sharepoint farm"
       },
-      "defaultValue": "spfarm"
+      "defaultValue": "SouthComDev"
     },
     "location": {
       "type": "string",
@@ -21,7 +21,7 @@
       "metadata": {
         "description": "The name of the Virtual Network to Create"
       },
-      "defaultValue": "spfarmVNET"
+      "defaultValue": "VNT-SouthComDevMil"
     },
     "virtualNetworkAddressRange": {
       "type": "string",
@@ -62,7 +62,8 @@
       "type": "string",
       "metadata": {
         "description": "The name of the Administrator of the new VM and Domain"
-      }
+      },
+      "defaultValue": "spfarm"
     },
     "adminPassword": {
       "type": "securestring",
@@ -96,7 +97,7 @@
       "metadata": {
         "description": "The FQDN of the AD Domain created "
       },
-      "defaultValue": "contoso.local"
+      "defaultValue": "southcomdev.mil"
     },
     "sqlServerServiceAccountUserName": {
       "type": "string",
@@ -129,7 +130,7 @@
       "metadata": {
         "description": "The Sharepoint Farm account name"
       },
-      "defaultValue": "sp_farm"
+      "defaultValue": "spfarm"
     },
     "sharePointFarmAccountPassword": {
       "type": "securestring",
@@ -154,7 +155,8 @@
       "type": "string",
       "metadata": {
         "description": "The DNS Prefix for the SharePoint Public IP Address"
-      }
+      },
+      "defaultValue": "southcomdev"
     },
     "baseUrl": {
       "type": "string",
@@ -213,9 +215,9 @@
     "configDatabaseName": "SP_Config",
     "administrationContentDatabaseName": "SP_AdminContent",
     "contentDatabaseName": "spARM_Content",
-    "adVMName": "[concat(parameters('sharepointFarmName'),'-ad')]",
-    "sqlVMName": "[concat(parameters('sharepointFarmName'),'-sql')]",
-    "spVMName": "[concat(parameters('sharepointFarmName'),'-sp')]",
+    "adVMName": "VMW-SOUTHCOMDEVMIL-1",
+    "sqlVMName": "VMW-SQL2014-1",
+    "spVMName": "VMW-SP2013-WFE-1",
     "LBFE": "LBFE",
     "LBBE": "LBBE",
     "RDPNAT": "RDP",
@@ -224,9 +226,9 @@
     "adSubnetName": "adSubnet",
     "sqlSubnetName": "sqlSubnet",
     "spSubnetName": "spSubnet",
-    "adNicName": "adNic",
-    "sqlNicName": "sqlNic",
-    "spNicName": "spNic",
+    "adNicName": "NIC-SOUTHCOMDEVMIL-1",
+    "sqlNicName": "NIC-SQL2014-1",
+    "spNicName": "NIC-SP2013-1",
     "VnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
     "adSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('adSubnetName'))]",
     "sqlSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('sqlSubnetName'))]",
@@ -234,9 +236,9 @@
     "adNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('adNicName'))]",
     "sqlNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('sqlNicName'))]",
     "spNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('spNicName'))]",
-    "adLBName": "adLoadBalancer",
-    "sqlLBName": "sqlLoadBalancer",
-    "spLBName": "spLoadBalancer",
+    "adLBName": "ALB-PUB-AD-1",
+    "sqlLBName": "ALB-PUB-SQL-1",
+    "spLBName": "ALB-PUB-SP-1",
     "adIPConfigID": "[concat(variables('adNicId'),'/ipConfigurations/ipconfig1')]",
     "adlbID": "[resourceId('Microsoft.Network/loadBalancers',variables('adLBName'))]",
     "adlbFEConfigID": "[concat(variables('adlbID'),'/frontendIPConfigurations/',variables('LBFE'))]",
@@ -248,20 +250,20 @@
     "sqlRDPNATRuleID": "[concat(variables('sqllbID'),'/inboundNatRules/',variables('RDPNAT'))]",
     "sqlBEAddressPoolID": "[concat(variables('sqllbID'),'/backendAddressPools/',variables('LBBE'))]",
     "spIPConfigID": "[concat(variables('spNicId'),'/ipConfigurations/ipconfig1')]",
-    "adDataDisk": "ADDataDisk",
+    "adDataDisk": "[concat(variables('adVMName'),'-DataDisk')]", 
     "adDataDiskSize": 1000,
-    "sqlDataDisk": "SQLDataDisk",
+    "sqlDataDisk": "[concat(variables('sqlVMName'),'-DataDisk')]",
     "sqlDataDiskSize": 1000,
-    "sqlLogDisk": "SQLLogDisk",
+    "sqlLogDisk": "[concat(variables('sqlVMName'),'-LogDisk')]",
     "sqlLogDiskSize": 1000,
-    "spDataDisk": "SPDataDisk",
+    "spDataDisk": "[concat(variables('spVMName'),'-DataDisk')]",
     "spDataDiskSize": 1000,
-    "adpublicIPAddressName": "adpublicIP",
-    "sqlpublicIPAddressName": "sqlpublicIP",
+    "adpublicIPAddressName": "PIP-SOUTHCOMDEVMIL-1",  
+    "sqlpublicIPAddressName": "PIP-SQL2014-1",
     "spCentralAdminPort": 8080,
-    "spAvailabilitySetName": "spAvailabiltySet",
-    "sqlAvailabilitySetName": "sqlAvailabiltySet",
-    "adAvailabilitySetName": "adAvailabiltySet",
+    "spAvailabilitySetName": "AVS-SP2013-1",
+    "sqlAvailabilitySetName": "AVS-SQL2014-1",
+    "adAvailabilitySetName": "AVS-SOUTHCOMDEVMIL-1",
     "publicIPAddressType": "Dynamic",
     "subnets": [
       {

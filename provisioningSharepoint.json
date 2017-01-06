@@ -62,10 +62,10 @@
             "osType": "Windows",
             "name": "osdisk",
             "image": {
-              "uri": "https://scspdev2013store.blob.core.usgovcloudapi.net/vhds/sp2013dev20161208194932.vhd"
+              "uri": "https://stasouthcomdev.blob.core.usgovcloudapi.net/deploymentimages/sp2013dev20161208194932.vhd"
             },
             "vhd": {
-              "uri": "[concat('https://scspdev2013store.blob.core.usgovcloudapi.net/vhds/',parameters('spVMName'),'-osdisk.vhd')]"
+              "uri": "[concat('https://stasouthcomdev.blob.core.usgovcloudapi.net/vhds/',parameters('spVMName'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
