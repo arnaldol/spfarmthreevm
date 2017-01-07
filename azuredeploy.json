@@ -103,7 +103,7 @@
       "metadata": {
         "description": "The SQL Server Service account name"
       },
-      "defaultValue": "spfarm"
+      "defaultValue": "sqlservice"
     },
     "sqlServerServiceAccountPassword": {
       "type": "securestring",
@@ -116,7 +116,7 @@
       "metadata": {
         "description": "The Sharepoint Setup account name"
       },
-      "defaultValue": "spfarm"
+      "defaultValue": "sp_setup"
     },
     "sharePointSetupUserAccountPassword": {
       "type": "securestring",
@@ -129,7 +129,7 @@
       "metadata": {
         "description": "The Sharepoint Farm account name"
       },
-      "defaultValue": "spfarm"
+      "defaultValue": "sp_farm"
     },
     "sharePointFarmAccountPassword": {
       "type": "securestring",
@@ -154,8 +154,7 @@
       "type": "string",
       "metadata": {
         "description": "The DNS Prefix for the SharePoint Public IP Address"
-      },
-      "defaultValue": "southcomdev"
+      }
     },
     "baseUrl": {
       "type": "string",
