@@ -62,8 +62,7 @@
       "type": "string",
       "metadata": {
         "description": "The name of the Administrator of the new VM and Domain"
-      },
-      "defaultValue": "spfarm"
+      }
     },
     "adminPassword": {
       "type": "securestring",
@@ -226,9 +225,9 @@
     "adSubnetName": "adSubnet",
     "sqlSubnetName": "sqlSubnet",
     "spSubnetName": "spSubnet",
-    "adNicName": "NIC-SOUTHCOMDEVMIL-1",
-    "sqlNicName": "NIC-SQL2014-1",
-    "spNicName": "NIC-SP2013-1",
+    "adNicName": "NIC-SCDEVAD-1",
+    "sqlNicName": "NIC-SQL14-1",
+    "spNicName": "NIC-SP13-1",
     "VnetID": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
     "adSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('adSubnetName'))]",
     "sqlSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('sqlSubnetName'))]",
@@ -258,12 +257,12 @@
     "sqlLogDiskSize": 1000,
     "spDataDisk": "[concat(variables('spVMName'),'-DataDisk')]",
     "spDataDiskSize": 1000,
-    "adpublicIPAddressName": "PIP-SOUTHCOMDEVMIL-1",  
-    "sqlpublicIPAddressName": "PIP-SQL2014-1",
+    "adpublicIPAddressName": "PIP-SCDEVAD-1",  
+    "sqlpublicIPAddressName": "PIP-SQL14-1",
     "spCentralAdminPort": 8080,
-    "spAvailabilitySetName": "AVS-SP2013-1",
-    "sqlAvailabilitySetName": "AVS-SQL2014-1",
-    "adAvailabilitySetName": "AVS-SOUTHCOMDEVMIL-1",
+    "spAvailabilitySetName": "AVS-SP13-1",
+    "sqlAvailabilitySetName": "AVS-SQL14-1",
+    "adAvailabilitySetName": "AVS-SCDEVAD-1",
     "publicIPAddressType": "Dynamic",
     "subnets": [
       {

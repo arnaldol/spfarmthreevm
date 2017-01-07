@@ -30,7 +30,7 @@
             "value": "GEN-PASSWORD"
         },
         "sppublicIPAddressName": {
-            "value": "PIP-SP2013-WFE-1"
+            "value": "PIP-SP13-WFE-1"
         },
         "spDNSPrefix": {
             "value": "GEN-UNIQUE"
